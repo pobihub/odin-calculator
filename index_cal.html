@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <div id = 'container'>
+
+    </div>
+    <script>
+        let container = document.querySelector('#container');
+        let displayScreen = document.createElement('div');
+        displayScreen.classList.add('displayScreen');
+        let keyPad = document.createElement('div');
+        keyPad.classList.add('keyPad');
+        container.appendChild(displayScreen);
+        container.appendChild(keyPad);
+
+        function add(firstNum, secondNum) {
+            addAnswer = firstNum + secondNum;
+            //return addAnswer; 
+            console.log(addAnswer);
+        }
+
+        function subtract(firstNum, secondNum) {
+            subtractAnswer = firstNum - secondNum;
+            //return substractAnswer; 
+            console.log(subtractAnswer);
+        }
+
+        function multiply(firstNum, secondNum) {
+            multiplyAnswer = firstNum * secondNum;
+            //return multiplyAnswer; 
+            console.log(multiplyAnswer);
+        }
+
+        function divide(firstNum, secondNum) {
+            if (secondNum === 0) {
+                alert( "can't divide with zero!");
+            }
+            else {
+                divideAnswer = firstNum / secondNum;
+            }
+            
+            //return divideAnswer; 
+            console.log(divideAnswer);
+        }
+
+        function operate(firstNum,secondNum,operator) {
+            if (operator ==='+') {
+                add(firstNum,secondNum);
+            }
+            else if (operator === '-') {
+                subtract(firstNum,secondNum);
+            }
+
+            else if (operator === '*') {
+                multiply(firstNum,secondNum);
+            }
+            else if (operator === '/') {
+                divide(firstNum,secondNum);
+            }
+        }
+        
+        //multiply(10,3);
+        //divide(60,3);
+        operate(32,4,'+');
+
+
+    </script>
+</body>
+</html>
